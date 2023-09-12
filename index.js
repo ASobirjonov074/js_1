@@ -20,6 +20,8 @@ let gold = document.querySelector('.gold')
 let silver = document.querySelector('.silver')
 let black = document.querySelector('.black')
 let img = document.querySelector('.picture img')
+let btn = document.querySelectorAll('.four_colors button')
+let h2 = document.querySelector('.color h2')
 
 purple.onclick = () => {
     img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-deeppurple?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703840578')
@@ -36,3 +38,20 @@ silver.onclick = () => {
 black.onclick = () => {
     img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-spaceblack?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703840510')
 }
+
+btn.forEach(btn => {
+
+    const key = btn.getAttribute('data-color')
+
+    btn.onmouseenter = () => {
+        h2.innerHTML = `Color - ${key}`
+    }
+
+    btn.onmouseleave = () => {
+        h2.innerHTML = current
+    }
+   
+})
+
+
+
